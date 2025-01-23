@@ -9,14 +9,6 @@
 <body>
     <div class="login-container">
         <h2>登录</h2>
-        <!-- 添加账号选择下拉框 -->
-        <div class="form-group">
-            <select id="userSelect" onchange="fillUserInfo()">
-                <option value="">请选择账号</option>
-                <option value="123">账号1 (123)</option>
-                <option value="fang">账号2 (fang)</option>
-            </select>
-        </div>
         <form id="loginForm" onsubmit="return login(event)">
             <div class="form-group">
                 <input type="text" id="username" required placeholder="用户名">
@@ -45,4 +37,4 @@
 
     <script src="login.js"></script>
 </body>
-</html> 
+</html>
