@@ -7,20 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    // ... existing login check code ...
+    <script>
+        if (!localStorage.getItem('currentUser')) {
+            window.location.href = 'login.html';
+        }
+    </script>
     
     <div class="container">
         <div class="user-info">
             <span>当前用户：<span id="currentUsername"></span></span>
-            <button onclick="switchAccount()" style="width: auto; margin-left: 10px;">切换账号</button>
-        </div>
-
-        <!-- 添加蛇年装饰元素 -->
-        <div class="snake-decoration">
-            <div class="snake snake-left"></div>
-            <div class="snake snake-right"></div>
-            <div class="snake-pattern snake-pattern-1"></div>
-            <div class="snake-pattern snake-pattern-2"></div>
+            <button onclick="switchAccount()">切换账号</button>
         </div>
 
         <div class="greeting">
@@ -28,8 +24,10 @@
             <h2>灵蛇献瑞</h2>
         </div>
 
-        <div class="chinese-zodiac">
-            <div class="zodiac-circle"></div>
+        <div class="fireworks">
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
         </div>
 
         <div class="wishes">
@@ -43,11 +41,20 @@
             </ul>
         </div>
         
-        <div class="button-group">
-            <button onclick="logout()" style="width: auto; margin-top: 20px;">退出登录</button>
-        </div>
+        <button onclick="logout()" class="logout-btn">退出登录</button>
     </div>
 
-    // ... existing scripts ...
+    <script>
+        document.getElementById('currentUsername').textContent = localStorage.getItem('currentUser');
+
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+
+        function switchAccount() {
+            window.location.href = 'login.html?switch=true';
+        }
+    </script>
 </body>
 </html>
