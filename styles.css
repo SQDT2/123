@@ -1,152 +1,122 @@
-// ... existing base styles ...
-
-/* 修改背景为蛇年主题色 */
 body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     background: linear-gradient(135deg, #1a472a, #2d5a27);
+    font-family: "Microsoft YaHei", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 修改蛇的装饰元素 */
-.snake-decoration {
+.container {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+}
+
+.user-info {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.snake {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,50 Q30,20 50,50 T90,50" fill="none" stroke="gold" stroke-width="3" stroke-linecap="round"/></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    animation: slither 6s ease-in-out infinite;
-}
-
-.snake-left {
-    left: 5%;
-    top: 30%;
-    transform: scale(-1, 1);
-}
-
-.snake-right {
-    right: 5%;
-    top: 30%;
-    animation-delay: 1s;
-}
-
-.snake-pattern {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,0 80,20 T20,20" fill="none" stroke="rgba(255,215,0,0.3)" stroke-width="2" stroke-dasharray="5,5"/></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.3;
-    animation: rotate 20s linear infinite;
-}
-
-.snake-pattern-1 {
-    left: -50px;
-    top: -50px;
-}
-
-.snake-pattern-2 {
-    right: -50px;
-    bottom: -50px;
-    transform: rotate(180deg);
-}
-
-/* 修改标题样式 */
 .greeting h1 {
+    font-size: 4em;
+    margin: 0;
     color: #FFD700;
     text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-    animation: scaleText 4s ease-in-out infinite;
+    animation: bounce 2s infinite;
 }
 
 .greeting h2 {
+    font-size: 2.5em;
+    margin: 10px 0;
     color: #98FB98;
     text-shadow: 0 0 15px rgba(152, 251, 152, 0.6);
-}
-
-/* 修改祝福语样式 */
-.wishes li {
-    font-size: 1.4em;
-    text-shadow: 0 0 10px rgba(152, 251, 152, 0.5);
-    padding: 15px;
-    border: 1px solid rgba(152, 251, 152, 0.3);
-    border-radius: 10px;
-    margin: 15px 0;
-    background: rgba(26, 71, 42, 0.3);
-    animation: slideIn 0.5s ease-in both;
-    position: relative;
-    overflow: hidden;
-}
-
-.wishes li::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(152, 251, 152, 0.2), transparent);
     animation: shine 3s infinite;
 }
 
-/* 添加新动画 */
-@keyframes slither {
-    0% { transform: translateX(0) rotate(0); }
-    25% { transform: translateX(20px) rotate(5deg); }
-    75% { transform: translateX(-20px) rotate(-5deg); }
-    100% { transform: translateX(0) rotate(0); }
+.wishes {
+    margin-top: 40px;
 }
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.wishes p {
+    font-size: 1.5em;
 }
 
-@keyframes scaleText {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+.wishes ul {
+    list-style: none;
+    padding: 0;
 }
 
-@keyframes slideIn {
-    from { 
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to { 
-        opacity: 1;
-        transform: translateX(0);
-    }
+.wishes li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid rgba(152, 251, 152, 0.3);
+    border-radius: 10px;
+    background: rgba(26, 71, 42, 0.3);
+    animation: fadeIn 0.5s ease-in both;
+}
+
+.wishes li:nth-child(1) { animation-delay: 0.2s; }
+.wishes li:nth-child(2) { animation-delay: 0.4s; }
+.wishes li:nth-child(3) { animation-delay: 0.6s; }
+.wishes li:nth-child(4) { animation-delay: 0.8s; }
+.wishes li:nth-child(5) { animation-delay: 1.0s; }
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background: #e74c3c;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #c0392b;
+}
+
+.logout-btn {
+    margin-top: 20px;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #FFD700;
+    animation: explode 2s infinite;
+}
+
+.firework:nth-child(1) { top: 20%; left: 20%; }
+.firework:nth-child(2) { top: 30%; right: 20%; animation-delay: 0.5s; }
+.firework:nth-child(3) { top: 15%; left: 50%; animation-delay: 0.8s; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 @keyframes shine {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+    50% { text-shadow: 0 0 20px #fff, 0 0 30px #fff; }
 }
 
-/* 添加生肖圆环 */
-.chinese-zodiac {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    opacity: 0.2;
-    animation: rotateZodiac 30s linear infinite;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.zodiac-circle {
-    width: 100%;
-    height: 100%;
-    border: 2px solid gold;
-    border-radius: 50%;
-    position: relative;
-}
-
-@keyframes rotateZodiac {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(20); opacity: 0; }
 }
