@@ -3,61 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新年快乐</title>
+    <title>蛇年快乐</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-        // 检查是否已登录
-        if (!localStorage.getItem('currentUser')) {
-            window.location.href = 'login.html';
-        }
-    </script>
+    // ... existing login check code ...
     
     <div class="container">
-        <!-- 添加当前用户显示和切换账号按钮 -->
         <div class="user-info">
             <span>当前用户：<span id="currentUsername"></span></span>
             <button onclick="switchAccount()" style="width: auto; margin-left: 10px;">切换账号</button>
         </div>
+
+        <!-- 添加蛇年装饰元素 -->
+        <div class="snake-decoration">
+            <div class="snake snake-left"></div>
+            <div class="snake snake-right"></div>
+            <div class="snake-pattern snake-pattern-1"></div>
+            <div class="snake-pattern snake-pattern-2"></div>
+        </div>
+
         <div class="greeting">
-            <h1>新年快乐</h1>
-            <h2>恭喜发财</h2>
+            <h1>蛇年快乐</h1>
+            <h2>灵蛇献瑞</h2>
         </div>
-        <div class="fireworks">
-            <div class="firework"></div>
-            <div class="firework"></div>
-            <div class="firework"></div>
+
+        <div class="chinese-zodiac">
+            <div class="zodiac-circle"></div>
         </div>
+
         <div class="wishes">
-            <p>愿您在新的一年里：</p>
+            <p>蛇年祝福：</p>
             <ul>
-                <li>身体健康</li>
-                <li>万事如意</li>
-                <li>阖家欢乐</li>
-                <li>事业有成</li>
+                <li>蛇舞九天福满门</li>
+                <li>前程似锦步步高</li>
+                <li>灵蛇献瑞纳千祥</li>
+                <li>财运亨通万事顺</li>
+                <li>蛇年大吉好运来</li>
             </ul>
         </div>
         
-        <!-- 修改退出登录按钮位置 -->
         <div class="button-group">
             <button onclick="logout()" style="width: auto; margin-top: 20px;">退出登录</button>
         </div>
     </div>
 
-    <script>
-        // 显示当前用户名
-        document.getElementById('currentUsername').textContent = localStorage.getItem('currentUser');
-
-        function logout() {
-            localStorage.removeItem('currentUser');
-            window.location.href = 'login.html';
-        }
-
-        function switchAccount() {
-            // 保留当前登录状态，但跳转到登录页面
-            window.location.href = 'login.html?switch=true';
-        }
-    </script>
+    // ... existing scripts ...
 </body>
-</html> 
+</html>
