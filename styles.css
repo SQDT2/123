@@ -1,0 +1,217 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    font-family: "Microsoft YaHei", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.greeting h1 {
+    font-size: 4em;
+    margin: 0;
+    animation: bounce 2s infinite;
+}
+
+.greeting h2 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    animation: shine 3s infinite;
+}
+
+.wishes {
+    margin-top: 40px;
+}
+
+.wishes p {
+    font-size: 1.5em;
+}
+
+.wishes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.wishes li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    animation: fadeIn 0.5s ease-in both;
+}
+
+.wishes li:nth-child(1) { animation-delay: 0.2s; }
+.wishes li:nth-child(2) { animation-delay: 0.4s; }
+.wishes li:nth-child(3) { animation-delay: 0.6s; }
+.wishes li:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes shine {
+    0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+    50% { text-shadow: 0 0 20px #fff, 0 0 30px #fff; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    animation: explode 2s infinite;
+}
+
+.firework:nth-child(1) { 
+    top: 20%; 
+    left: 20%;
+    animation-delay: 0.2s;
+}
+
+.firework:nth-child(2) { 
+    top: 30%; 
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+.firework:nth-child(3) { 
+    top: 15%; 
+    left: 50%;
+    animation-delay: 0.8s;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(20); opacity: 0; }
+}
+
+/* 登录页面样式 */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.login-container h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #c0392b;
+}
+
+.register-link {
+    text-align: center;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#registerForm {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#registerForm h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.user-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info button {
+    width: auto;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 添加下拉框样式 */
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+select option {
+    background: #c0392b;
+    color: #fff;
+} 

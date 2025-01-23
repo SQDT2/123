@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 新年祝福</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>登录</h2>
+        <form id="loginForm" onsubmit="return login(event)">
+            <div class="form-group">
+                <input type="text" id="username" required placeholder="用户名">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" required placeholder="密码">
+            </div>
+            <button type="submit">登录</button>
+        </form>
+        <p class="register-link">还没有账号？<a href="#" onclick="showRegister()">立即注册</a></p>
+        
+        <div id="registerForm" class="hidden">
+            <h3>注册新账号</h3>
+            <div class="form-group">
+                <input type="text" id="newUsername" required placeholder="设置用户名">
+            </div>
+            <div class="form-group">
+                <input type="password" id="newPassword" required placeholder="设置密码">
+            </div>
+            <div class="form-group">
+                <input type="password" id="confirmPassword" required placeholder="确认密码">
+            </div>
+            <button onclick="register()">注册</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html> 
