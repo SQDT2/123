@@ -1,122 +1,88 @@
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1a472a, #2d5a27);
-    font-family: "Microsoft YaHei", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 登录页面样式 */
+.login-container {
+    background: linear-gradient(135deg, rgba(26, 71, 42, 0.9), rgba(45, 90, 39, 0.9));
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 320px;
+    margin: 20px auto;
 }
 
-.container {
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-    position: relative;
-}
-
-.user-info {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.greeting h1 {
-    font-size: 4em;
-    margin: 0;
+.login-container h2, 
+.login-container h3 {
     color: #FFD700;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-    animation: bounce 2s infinite;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-.greeting h2 {
-    font-size: 2.5em;
-    margin: 10px 0;
-    color: #98FB98;
-    text-shadow: 0 0 15px rgba(152, 251, 152, 0.6);
-    animation: shine 3s infinite;
+.form-group {
+    margin-bottom: 20px;
 }
 
-.wishes {
-    margin-top: 40px;
-}
-
-.wishes p {
-    font-size: 1.5em;
-}
-
-.wishes ul {
-    list-style: none;
-    padding: 0;
-}
-
-.wishes li {
-    font-size: 1.2em;
-    margin: 10px 0;
-    padding: 10px;
+.form-group input {
+    width: 100%;
+    padding: 12px;
     border: 1px solid rgba(152, 251, 152, 0.3);
-    border-radius: 10px;
-    background: rgba(26, 71, 42, 0.3);
-    animation: fadeIn 0.5s ease-in both;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-.wishes li:nth-child(1) { animation-delay: 0.2s; }
-.wishes li:nth-child(2) { animation-delay: 0.4s; }
-.wishes li:nth-child(3) { animation-delay: 0.6s; }
-.wishes li:nth-child(4) { animation-delay: 0.8s; }
-.wishes li:nth-child(5) { animation-delay: 1.0s; }
+.form-group input:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
 
-button {
-    padding: 8px 16px;
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     background: #e74c3c;
     color: #fff;
+    font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+    margin-top: 10px;
 }
 
-button:hover {
+.login-container button:hover {
     background: #c0392b;
+    transform: translateY(-2px);
 }
 
-.logout-btn {
+.register-link {
+    text-align: center;
+    color: #fff;
     margin-top: 20px;
 }
 
-.firework {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #FFD700;
-    animation: explode 2s infinite;
+.register-link a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.firework:nth-child(1) { top: 20%; left: 20%; }
-.firework:nth-child(2) { top: 30%; right: 20%; animation-delay: 0.5s; }
-.firework:nth-child(3) { top: 15%; left: 50%; animation-delay: 0.8s; }
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+.register-link a:hover {
+    color: #FFA500;
+    text-decoration: underline;
 }
 
-@keyframes shine {
-    0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
-    50% { text-shadow: 0 0 20px #fff, 0 0 30px #fff; }
+.hidden {
+    display: none;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes explode {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(20); opacity: 0; }
+#registerForm {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
